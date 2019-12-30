@@ -245,7 +245,7 @@ def most_points_scored
   player_name = ''
 
   players.reduce(nil) do |points, player_info|
-    points = players[:points] if !points
+    points = player_info[:points] if !points
 
     if player_info[:points] > points
       points = player_info[:points]
@@ -253,5 +253,5 @@ def most_points_scored
     end
     points
   end
-  
+  player_name
 end
