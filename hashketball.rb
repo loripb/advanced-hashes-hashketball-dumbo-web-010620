@@ -304,7 +304,7 @@ def long_name_steals_a_ton?
       steals = player_info[:steals]
       person_with_most_steals = player_info[:player_name]
     end
-    points
+    steals
   end
 
   if player_in_question == person_with_most_steals
