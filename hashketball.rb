@@ -295,7 +295,7 @@ end
 def long_name_steals_a_ton?
   player_in_question = player_with_longest_name
   players = game_hash[:home][:players] + game_hash[:away][:players]
-  person_with_most_steals
+  person_with_most_steals = ''
 
   players.reduce(nil) do |steals, player_info|
     steals = player_info[:steals] if !steals
