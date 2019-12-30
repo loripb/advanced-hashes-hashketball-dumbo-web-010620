@@ -148,11 +148,6 @@ def shoe_size(player_name)
      end
   end
 
-  away_players.each do |player|
-     if player[:player_name] == player_name
-       result = player[:shoe]
-     end
-  end
   result
 end
 
