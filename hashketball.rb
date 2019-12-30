@@ -255,3 +255,12 @@ def most_points_scored
   end
   player_name
 end
+
+def winning_team
+  home_points = game_hash[:home][:players].reduce(nil) do |points, player_info|
+    points = 0 if !points
+
+    points += player_info[:points]
+    points
+  end
+end
