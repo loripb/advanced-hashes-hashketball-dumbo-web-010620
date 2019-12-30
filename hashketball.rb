@@ -123,11 +123,12 @@ def game_hash
 end
 
 def get_all_players
-
+  game_hash[:home][:players] + game_hash[:away][:players]
 end
 
 def num_points_scored(player_name)
   result = 0
+  players = get_all_players
   home_players = game_hash[:home][:players]
   away_players = game_hash[:away][:players]
 
