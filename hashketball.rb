@@ -234,7 +234,7 @@ def big_shoe_rebounds
       biggest_shoe = player_info[:shoe]
       h = player_info[:rebounds]
     end
-
-    h
+    p h
+    biggest_shoe
   end
 end
