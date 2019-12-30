@@ -208,27 +208,21 @@ def create_stat_hash(player_info)
   }
 end
 
-def reduce_array(arr, return_variable, var1, var2)
-  arr.reduce(nil) do |memo, arr_info|
-    memo = arr_info[var1] if !memo
-
-
-    if arr_info[var1] > memo
-      memo = arr_info[var1]
-      return_variable = arr_info[var2]
-    end
-    memo
-  end
-  return_variable
-end
-
 def big_shoe_rebounds
   players = get_all_players
   rebounds = 0
+  
+  players.reduce(nil) do |biggest_shoe, player_info|
+    biggest_shoe = player_info[:shoe] if !biggest_shoe
 
-  players.map do |player|
-    reduce_array(player, rebounds, player[:shoes], player[:rebounds])
+
+    if player_info[:shoe] > biggest_shoe
+      biggest_shoe = player_info[:shoe]
+      rebounds = player_info[:rebounds]
+    end
+    biggest_shoe
   end
+
   rebounds
 end
 
