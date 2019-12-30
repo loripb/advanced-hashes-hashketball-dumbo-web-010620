@@ -226,7 +226,7 @@ end
 def big_shoe_rebounds
   players = game_hash[:home][:players] + game_hash[:away][:players]
   rebounds = 0
-  player_with_biggest_shoe = players.reduce(nil) do |biggest_shoe, player_info|
+  players.reduce(nil) do |biggest_shoe, player_info|
     biggest_shoe = player_info[:shoe] if !biggest_shoe
 
 
@@ -241,5 +241,7 @@ def big_shoe_rebounds
 end
 
 def most_points_scored
+  players = game_hash[:home][:players] + game_hash[:away][:players]
 
+  pl
 end
