@@ -184,20 +184,14 @@ end
 
 def player_stats(player_name)
   result = {}
-  home_players = game_hash[:home][:players]
-  away_players = game_hash[:away][:players]
+  players = get_all_players
 
-  home_players.each do |player|
+  players.each do |player|
      if player[:player_name] == player_name
        result = create_stat_hash(player)
      end
   end
 
-  away_players.each do |player|
-     if player[:player_name] == player_name
-       result = create_stat_hash(player)
-     end
-  end
   result
 end
 
