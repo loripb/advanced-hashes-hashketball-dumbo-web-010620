@@ -257,11 +257,15 @@ def most_points_scored
 end
 
 def winning_team
-  home_points = game_hash[:home][:players].reduce(nil) do |points, player_info|
+  home_points = calculate_points(game_hash[:home][:players])
+  p home_points
+end
+
+def calculate_points(team)
+  team.reduce(nil) do |points, player_info|
     points = 0 if !points
 
     points += player_info[:points]
     points
   end
-  p home_points
 end
