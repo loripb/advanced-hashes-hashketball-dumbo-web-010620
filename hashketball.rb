@@ -294,6 +294,22 @@ end
 
 def long_name_steals_a_ton?
   player_in_question = player_with_longest_name
-  players =
+  players = game_hash[:home][:players] + game_hash[:away][:players]
+  person_with_most_steals
 
+  players.reduce(nil) do |steals, player_info|
+    steals = player_info[:steals] if !steals
+
+    if player_info[:steals] > steals
+      steals = player_info[:steals]
+      person_with_most_steals = player_info[:player_name]
+    end
+    points
+  end
+
+  if player_in_question == person_with_most_steals
+    true
+  else
+    puts "You made a mistake somewhere"
+  end
 end
