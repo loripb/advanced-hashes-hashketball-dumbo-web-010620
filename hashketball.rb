@@ -242,6 +242,15 @@ end
 
 def most_points_scored
   players = game_hash[:home][:players] + game_hash[:away][:players]
+  player_name = ''
 
-  pl
+  players.reduce(nil) do |points, player_info|
+    points = player[:points] if !points
+
+    if player_info[:points] > points
+      points = player_info[:points]
+      player_name = player_info[:player_name]
+    end
+  end
+  player_name
 end
