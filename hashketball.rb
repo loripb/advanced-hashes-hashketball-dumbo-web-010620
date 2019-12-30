@@ -253,5 +253,5 @@ def most_points_scored
     end
     points
   end
-  player_name
+  
 end
