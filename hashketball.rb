@@ -275,3 +275,20 @@ def calculate_points(team)
     points
   end
 end
+
+def player_with_longest_name
+  players = game_hash[:home][:players] + game_hash[:away][:players]
+  longest_name = ''
+
+  players.reduce(nil) do |player_name, player_info|
+    player_name = '' if !player_name
+
+    if player_info[:player_name].length > player_name.length
+      player_name = player_info[:player_name]
+      longest_name = player_info[:player_name]
+    end
+    player_name
+  end
+  longest_name
+end
+end
