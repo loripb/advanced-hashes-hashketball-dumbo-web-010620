@@ -226,8 +226,9 @@ def big_shoe_rebounds
   players = get_all_players
   rebounds = 0
 
-  reduce_array(players, rebounds, :shoes, :rebounds)
-
+  players.map do |player|
+    reduce_array(player, rebounds, player[:shoes], player[:rebounds])
+  end
   rebounds
 end
 
